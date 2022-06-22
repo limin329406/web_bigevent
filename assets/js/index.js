@@ -1,5 +1,5 @@
 $(function() {
-    // 调用火球用户信息函数
+    // 调用获取用户信息函数
     getUseerInfo()
         // 点击按钮实现退出功能
         // 获取layer
@@ -35,16 +35,16 @@ function getUseerInfo() {
             // 调用用用户头像函数
             readerAvatar(res.data)
         },
-        // 无论成功与否 都会调用complete函数
-        complete: function(res) {
-            // 在complete函数中 通过res.responseJSON来拿到数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                // 清除token 回到登录页面
-                localStorage.removeItem('token')
-                    // 跳转会登录页面
-                location.href = './login.html'
-            }
-        }
+        // // 无论成功与否 都会调用complete函数
+        // complete: function(res) {
+        //     // 在complete函数中 通过res.responseJSON来拿到数据
+        //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+        //         // 清除token 回到登录页面
+        //         localStorage.removeItem('token')
+        //             // 跳转会登录页面
+        //         location.href = './login.html'
+        //     }
+        // }
 
 
     })
